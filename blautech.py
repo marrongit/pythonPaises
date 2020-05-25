@@ -25,19 +25,12 @@ else:
     jsonData = res.json()
     for data in jsonData:
         info = []
-        rows = []
-        nombre = data['name']
-        capital = data['capital']
-        region = data['region']
-        alpha3 = data['alpha3Code']
-        subregion = data['subregion']
-        population = data['population']
-        info.append(nombre)
-        info.append(capital)
-        info.append(region)
-        info.append(alpha3)
-        info.append(subregion)
-        info.append(population)
+        info.append(data['name'])
+        info.append(data['capital'])
+        info.append(data['region'])
+        info.append(data['alpha3Code'])
+        info.append(data['subregion'])
+        info.append(data['population'])
         paises.append(info)
      
      
@@ -50,7 +43,7 @@ with open('paises.csv','w',newline='') as csvfile:
          for info in paises:
              csvWriter.writerow(info)
          csvfile.close
-         print("success")
+         print(":::Se creo el archivo csv:::")
          
 
 with open('paises-1_fra_csv.csv') as csvfile:
